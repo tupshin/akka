@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>jboner/akka @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #cdd8bf;
+		  font-family: "helvetica"; 
+  		color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #322740; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #322740; }
+    h3 { text-align: center; color: #322740; }
+    a { color: #322740; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/jboner/akka"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/jboner/akka/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/jboner/akka/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+      
+    <h1><a href="http://github.com/jboner/akka">akka</a> 
+      <span class="small">by <a href="http://github.com/jboner">jboner</a></span></h1>
+
+    <div class="description">
+      Akka Actor Kernel:  RESTful Distributed Fault-tolerant Persistent Transactional Actors
+    </div>
+
+    <p>h2. Here is a short overview
+
+h3. The Actor model and supervisor hierarchies
+ 
+"Actors":http://en.wikipedia.org/wiki/Actor_model with "Erlang OTP-style supervisors":http://www.erlang.org/doc/design_principles/sup_princ.html#5 and "embrace failure/let-it-crash" semantics to allow implementation of asynchronous, non-blocking and highly fault-tolerant systems. Sort of "SEDA":http://www.eecs.harvard.edu/~mdw/proj/seda/ in a box with highly configurable and monitorable (JMX and w3c) thread pools and message queues.
+
+h3. Software Transactional Memory (STM)
+
+"Software Transactional Memory (STM)":http://en.wikipedia.org/wiki/Software_transactional_memory for composable message flows. Distributed transactions will come very soon, backed up by "ZooKeeper":http://hadoop.apache.org/zookeeper/. The STM works with both persistent datastructures and in-memory datastructures (see below).
+
+h3. BASE: Eventually Consistent Distributed persistence
+
+Akka provides a "Eventually Consistent":http://www.allthingsdistributed.com/2008/12/eventually_consistent.html Transactional Persistent Map, Vector and Ref. Backed up by the "Cassandra":http://incubator.apache.org/cassandra/  highly scalable, eventually consistent, distributed, structured key-value store. Akka will add support for "Terracotta":http://terracotta.org, "Redis":http://code.google.com/p/redis/, "Memcached":http://www.danga.com/memcached/, "Voldemort":http://project-voldemort.com/, "Tokyo Cabinet/Tyrant":http://tokyocabinet.sourceforge.net/ and "Hazelcast":http://www.hazelcast.com/ shortly.
+
+New nodes can be added and removed on the fly to support true scaling of cluster. The addition of Terracotta and Hazelcast will allow for atomic (ACID) transactions (non-BASE).
+
+h3. REST
+
+Actors can be exposed as "REST":http://en.wikipedia.org/wiki/Representational_State_Transfer services through "JAX-RS":https://jersey.dev.java.net/.
+
+h3. Remoting 
+
+Actors can be defined and started on remote nodes, supporting both remote failures and supervision/linking. Enabling another dimension of fault-tolerance.
+ 
+h3. Java and Scala API 
+
+Both a Java API through Active Objects and annotations as well as a Scala API with Erlang-style Actors with pattern matching etc. 
+
+h3. Microkernel
+
+Akka has a microkernel that embeds the Actor management, Persistence service, REST integration, JMX management and Remote service. Simply drop your application in the /deploy directory and start up the kernel and you should be able to access your Actors through REST. 
+</p><h2>License</h2>
+<p>This software is licensed under the Apache 2 license, quoted below.
+
+Copyright 2009 Scalable Solutions AB <http://scalablesolutions.se>
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy of
+the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under
+the License.</p>
+<h2>Authors</h2>
+<p>Jonas Bonér (jonas AT jonasboner DOT com)<br/><br/>      </p>
+<h2>Contact</h2>
+<p>Jonas Bonér (jonas AT jonasboner DOT com)</p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/jboner/akka/zipball/master">zip</a> or
+      <a href="http://github.com/jboner/akka/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/jboner/akka</pre>
+    </p>
+      
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/jboner/akka">jboner/akka</a>
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>
