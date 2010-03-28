@@ -223,6 +223,12 @@ class AkkaParent(info: ProjectInfo) extends DefaultProject(info) {
 
   class AkkaCamelProject(info: ProjectInfo) extends DefaultProject(info) {
     val camel_core = "org.apache.camel" % "camel-core" % "2.2.0" % "compile"
+
+    // Experimental
+    val atmo_runtime = "org.atmosphere" % "atmosphere-runtime" % ATMO_VERSION % "compile"
+    val jetty_client = "org.mortbay.jetty" % "jetty-client" % "6.1.22" % "compile"
+    val jetty = "org.mortbay.jetty" % "jetty" % "6.1.22" % "compile"
+
     lazy val dist = deployTask(info, distPath) dependsOn(`package`) describedAs("Deploying")
   }
 

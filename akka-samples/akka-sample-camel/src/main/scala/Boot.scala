@@ -58,9 +58,16 @@ class Boot {
   val jmsSubscriber2 = new Subscriber("jms-subscriber-2", jmsUri).start
   val jmsPublisher = new Publisher("jms-publisher", jmsUri).start
 
+  val atmoUri = "atmosphere://localhost:8844"
+  val atmoSubscriber1 = new Subscriber("atmo-subscriber-1", atmoUri).start
+  val atmoSubscriber2 = new Subscriber("atmo-subscriber-2", atmoUri).start
+  val atmoSubscriber3 = new Subscriber("atmo-subscriber-3", atmoUri).start
+  val atmoPublisher = new Publisher("atmo-publisher", atmoUri).start
+
   //val cometdPublisherBridge = new PublisherBridge("jetty:http://0.0.0.0:8877/camel/pub/cometd", cometdPublisher).start
   val jmsPublisherBridge = new PublisherBridge("jetty:http://0.0.0.0:8877/camel/pub/jms", jmsPublisher).start
-  
+  val atmoPublisherBridge = new PublisherBridge("jetty:http://0.0.0.0:8877/camel/pub/atmo", atmoPublisher).start
+
 }
 
 class CustomRouteBuilder extends RouteBuilder {
